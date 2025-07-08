@@ -11,6 +11,12 @@ public class Ciclabile {
         this.currentIndex = 0;
     }
 
+    // costruttore vuoto per il bonus
+    public Ciclabile() {
+        this.arrayInt = new int[0];
+        this.currentIndex = 0;
+    }
+
     // metodo get
     public int getElementoSuccessivo() {
         if (hasAncoraElementi()) {
@@ -26,5 +32,16 @@ public class Ciclabile {
             return false;
         }
         return true;
+    }
+
+    // metodo per aggiungere un elemento(bonus)
+    public void addElement(int numero) {
+        int[] newArray = new int[arrayInt.length + 1];
+        for (int i = 0; i < arrayInt.length; i++) {
+            newArray[i] = arrayInt[i];
+        }
+
+        newArray[arrayInt.length] = numero;
+        arrayInt = newArray;
     }
 }
